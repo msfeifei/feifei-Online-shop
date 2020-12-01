@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>淘宝界面</title>
+
     <title>Newmodel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,48 +14,49 @@
   </head>
 
   <body>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+    
     <p class="navbar-text float-right">
 
-    <% if current_user %>
-
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
    </p>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= yield %>
+      
+    
   
   </body>
   
 <h1>online shop</h1>
 
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>淘宝界面</title>
+
   
     
  </head>
  <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <div id="top">
    <div id="top1">
     
     <div style="left: ;">
     
-     <a href="#">我的淘宝</a>
-     <a href="#">购物车</a>
-     <a href="#">收藏夹</a>
-     <a href="#">商品分类</a>
-     <a href="#">卖家中心</a>
-     <a href="#">联系客服</a>
-     <a href="#">网站导航</a>
+     <a href="https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fi.taobao.com%2Fmy_taobao.htm%3Fspm%3Da21bo.2017.1997525045.1.5af911d9k01cZY">我的淘宝</a>
+     <a href="https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fcart.tmall.com%2Fcart%2FmyCart.htm%3Fspm%3Da211oj.20948799.a2226mz.8%26from%3Dbtop">购物车</a>
+     <a href="https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fcart.tmall.com%2Fcart%2FmyCart.htm%3Fspm%3Da211oj.20948799.a2226mz.8%26from%3Dbtop">收藏夹</a>
+     <a href="https://login.taobao.com/member/login.jhtml?from=taobaoindex&f=top&style=&sub=true&redirect_url=https%3A%2F%2Fmyseller.taobao.com%2Fhome.htm%3Fspm%3Da2179.1434706.1997525073.1.66b540747x05Xq">商品分类</a>
+     <a href="https://login.taobao.com/member/login.jhtml?from=taobaoindex&f=top&style=&sub=true&redirect_url=https%3A%2F%2Fmyseller.taobao.com%2Fhome.htm%3Fspm%3Da2179.1434706.1997525073.1.66b540747x05Xq">卖家中心</a>
+     <a href="https://consumerservice.taobao.com/?spm=a21bo.2017.754895749.1.5af911d9i1jFRf">联系客服</a>
+     <a href="https://huodong.taobao.com/wow/tbhome/act/sitemap?spm=a21bo.2017.1997525077.1.5af911d9dFdhUw">网站导航</a>
+
+     <% if current_user %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+     <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+     <% end %>
     </div>
    </div>
    <div id="top2">
@@ -69,36 +74,8 @@
   <!--主体部分（商品展示，这里使用表格）-->
   <div id="main">
    <!--表格，宽度与浏览器宽度一致，列控制每列的宽度，复制后自适应数量-->
-   <table width="100%">
-    <!--两行五列-->
-    <tr align="center">
-     <td>
-      <a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.96.5cc3bcd4RHSs5F&id=619312114890&skuId=4374940608671&user_id=2859900024&cat_id=2&is_b=1&rn=6bf300760b263e19da8611491f746376">
-      <%=image_tag('maowang.png', width:'150px') %>
-      <!--&yen表示人民币-->
-      <p style="color: orange;">&yen 499.00 包邮</p>
-      <p>包邮 猫王收音机</p>
-      <p style="color: gray;">猫王收音机</p>
-      <p style="color: gray;" align="right">如实描述：4.9</p>
-     </td>
-     <td>
-      <a href="https://detail.ju.taobao.com/home.htm?spm=608.pinpaituan_jushop.pmod-zebra-ju-shop-recommend-9916_1606112039791_16.2&id=10002610401168&item_id=625769843037">
-      <%=image_tag('edition.png', width:'150px') %>
-      <!--&yen表示人民币-->
-      <p style="color: orange;">&yen 386.00 包邮</p>
-      <p>圆领套头毛衫羊毛宽松开叉针织衫</p>
-      <p style="color: gray;">edition聚划算专场</p>
-      <p style="color: gray;" align="right">如实描述：4.8</p>
-     </td>
-     <td>
-      <a href="https://store.taobao.com/shop/view_shop.htm?spm=875.7931836/B.2016073.12.78334265DEtkwi&user_number_id=748681129&abtest=&pvid=8979654b-74a9-4f41-b2f6-f88f7179d334&pos=12&abbucket=&brandId=97466&acm=09042.1003.1.1200415&scm=1007.13029.131809.100200300000000">
-      <%=image_tag('crocs.png', width:'150px') %>
-      <!--&yen表示人民币-->
-      <p style="color: orange;">&yen 189.00 包邮</p>
-      <p>Crocs官方旗舰店</p>
-      <p style="color: gray;">天生自由</p>
-      <p style="color: gray;" align="right">如实描述：4.9</p>
-
-     </td>
+   <%= yield %>
+  </div>
+   </body>
 
 </html>
